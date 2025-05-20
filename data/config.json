@@ -1,0 +1,22 @@
+{
+    "wenjian": {
+    "directories": [
+      "/www/wwwroot"
+    ],
+    "exclude": [
+      "*.log",
+      "*.tmp",
+      "*.json",
+      "*.jpg",
+      "*.png",
+      "*.gif",
+      "*.tar.gz",
+      "*.zip",
+      "*.rar",
+      "*.ico",
+      "*.txt",
+      "*cache/",
+      "*Runtime/"
+    ]
+}
+}
