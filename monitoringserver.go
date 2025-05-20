@@ -24,6 +24,7 @@ var (
 	logFile       *os.File
 	exclude       []string
 	MaxFileSize   int64
+	appversion    string
 )
 
 type Config struct {
@@ -55,11 +56,11 @@ func main() {
 		monitorDirs = append(monitorDirs, args...)
 	}
 
-	// 初始化日志
+	appversion = "Webserver文件防篡改监控-秋裤子1.2版"
 	initLog()
 	defer logFile.Close()
 
-	log.Println("Web目录监控文件防篡改 - 增强版1.2")
+	log.Println(appversion)
 
 	// 加载配置
 	if configFile != "" {
@@ -235,7 +236,7 @@ func startMonitoring() {
 }
 
 func checkFiles() {
-	log.Println("开始文件检查...")
+	log.Println(appversion + " 开始文件检查..")
 	changesDetected := false
 
 	for _, dir := range monitorDirs {
@@ -317,7 +318,7 @@ func checkFiles() {
 		}
 	}
 
-	log.Println("文件检查完成")
+	log.Println("文件检查完成 -.-")
 }
 
 func alert(message string) {
