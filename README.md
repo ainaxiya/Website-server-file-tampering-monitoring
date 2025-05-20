@@ -14,3 +14,7 @@ go run monitoringserver.go
 运行后会扫描监控的所有文件并且保存hash码
 hashdb.json 这个是保存监控的所有文件hash码的数据json，
 webmonitor.log这个是日志文件，监控的文件有任何变动都会保存进日志。
+
+This is a web server file tampering or change monitoring written in golang, which can push message warnings.
+
+How to use: First configure the config.json configuration file in the data folder during runtime, directories This is to configure the folder paths that need to be monitored, which can be multiple, exclude This is the excluded files or folders, the files below will not be monitored, and the wildcard suffix can be *.html. Compile it monitoringserver.go go build -o yourname monitoringserver.go or go run monitoringserver.go and it will be OK. Scan once every 20 minutes. After running, it will scan all monitored files and save the hash code. hashdb.json This is a data json that saves the hash codes of all monitored files. webmonitor.log This is a log file. Any changes to the monitored files will be saved in the log.
